@@ -5,6 +5,7 @@ import ac.kr.smu.JUDA.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class BoardController {
     }
 
     // Post 데이터 생성
-    @PostMapping("/posts")
+    @PostMapping(value = "/posts")
     public ResponseEntity<String> PutPost(@PathVariable("id") Long id, @RequestBody Board board){
         return new ResponseEntity<>(boardService.insert(board), HttpStatus.OK);
     }

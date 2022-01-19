@@ -21,6 +21,8 @@ public class Board {
     //@ManyToOne
     //private User writer; // 게시글 작성자
 
-    @CreatedDate
+    //private int profit; // 수익률
+
+   @CreatedDate
     private LocalDateTime instDtm; // 게시글 작성일
 }
